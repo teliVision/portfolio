@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+        <link href="home.css" rel="stylesheet">
+        <link href="home.js" rel="js">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eli Tsereteli</title>
+    </head>
+    <body>
+
+    <div class="business-card">
+        <div class="title">Contact Info</div>
+        <div class="icon-links">
+            <a href="https://www.linkedin.com/in/eli-tsereteli/"><img src="linkedin.svg" alt="LinkedIn"></a>
+            <a href="mailto:eli.tsereteli@gmail.com"><img src="email.svg" alt="Email"></a>
+            <a href="https://www.youtube.com/@teli4181"><img src="youtube.svg" alt="YouTube"></a>
+        </div>
+        <div class="email-text">eli.tsereteli@gmail.com</div>
+    </div>
+
+    <!--  centered stuff -->
+    <div style="text-align: center; align-items: center;">
+        <div class="main-title"><div>Animation.</div><div>(but cooler)</div></div>
+        
+        <div class="subtitle">
+            &nbsp &nbsp Hello! Name's Eli.<br><br>
+            I'm a game developer and animator.<br>
+            Or perhaps, "animator" is not the accurate word...<br> 
+            I make animations <span>work</span>. I get them to do what they're
+            intended for, and make it my mission to figure out why they don't, 
+            when they don't.<br><br>
+            ...and I'm a bit obsessed with adding flexibility and interaction to animations 
+            using simulated physics and procedural rigs.<br>
+        </div>
+        
+
+        <!-- Current Project -->
+        <div class="secondary-title">
+            Current Project<br>
+            <span>@ <a href="https://www.digipen.edu">DigiPen Institute of Technology</a></span>
+        </div>
+
+        <div class="tile-container">
+
+            <div class="tile">
+                <div class="title">Spring Physics</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/robot_spring.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    Partial ragdoll. Top of the robot's body bounces due to real-time spring
+                    physics; both halves still continue to play animation sequences.<br><br>
+                    This effect is automatically disabled while executing animations 
+                    that need to explicitly animate the springs.
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">Robot Ragdoll</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/robot_ragdoll.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    Full ragdoll, with some omitted constraints to allow it to
+                    fall apart.<br><br>
+                    Thankfully, our awesome artist already made the robot parts individually
+                    enclosed and only weight-painted to their inner bones, so there
+                    was no mesh stretching going on on separation.
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">Robot IK</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/robot_ik.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    Inverse kinematics for the robot's arms. <br>
+                    They can reach for given target in real-time, interpolating between left and right
+                    arm based on change of direction towards target.<br>
+                    We'll have more uses for it down the line.
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">Blockout Rig for Main Character</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/ila_blockout.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    While the artists were busy working on high-quality models, rigs, and animations, 
+                    I put together a quick rig for our blockout model to be able to start testing 
+                    gameplay mechanics with placeholder Mixamo animations.<br><br>
+                    I bound and weight-painted it to a skeleton from Mixamo to make sure it's compatible.<br>
+                    (Perhaps using their existing skeleton was unnecessary?.. Turns out Mixamo's auto-rigger 
+                    is pretty smart)
+                </div>
+            </div>
+
+        </div>
+
+        <div class="subtitle second">
+            <div class="title" style="left: -3em"><span style="text-shadow: 0 0 2px black;">&#8593</span> What's all this about?</div><br>
+            My team and I are currently working on a 3D action-adventure game <span>Spirit & Steel</span>.<br>
+            In a few words:<br><br>
+            Grandma with elemental powers vs. robots. <br><br>
+            We are a team of 5 programmers (including myself), 9 artists, 3 designers, 
+            and 1 music / audio specialist; we're building this game in Unreal Engine 5.<br> 
+            My responsibility is to integrate artists' rigs and animations into gameplay,
+            and to spice it up with some real-time physics and procedural motion.
+        </div>
+
+
+        <!-- Individual Work -->
+        <div class="secondary-title">
+            Individual Work<br>
+            <span>School + Personal</span>
+        </div>
+
+        <div class="tile-container">
+
+            <div class="tile">
+                <div class="title">OpenGL Animated Scene</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/sword.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    During our graphics class, we were tasked with building a custom OpenGL renderer 
+                    gradually throughout the semester. This is my version of the final project.<br><br>
+                    The models were made by me in Blender, I just needed to write a Python script to 
+                    export the vertices and faces into the format used by our framework.<br><br>
+                    The project itself is written in C++ and uses OpenGL 4.3.
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">Active Ragdoll w/ Grab</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/grab.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    Active ragdoll (physical animation) in Unreal was somewhat straightforward to set 
+                    up thanks to online tutorials, but trying to constrain body parts to environment 
+                    initially caused the skeletal mesh to stretch excessively. No solutions found online.<br><br>
+                    The issue was eventually resolved by tweaking the physics substep settings.
+                    Look at him hang.<br><br>
+                    This is intended for my personal parkour game project.<br>
+                    (Which is currently on hold. Busy times...)
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">De Casteljau curve</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/curve.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    First project that we've had so far in our current "Curves and Surfaces" math class: 
+                    rendering a polynomial curve using De Casteljau's algorithm.<br>
+                    Two alternative methods used for calculating the curve: recursive 
+                    (Nested Linear Interpolation), and iterative (Bernstein Polynomial summation).<br><br>
+                    Made in Godot Engine. <br>
+                    While GDScript is not nearly as fast as C++, and initially caused 
+                    stutter when used with recursive method, some simple memoization fixed that.<br>
+                    For the upcoming projects (first of which will be rendering of Bezier curves), I 
+                    intend to use GDExtension to write the performance-critical parts in C++.
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="title">Strange Flying Creature</div>
+                <div class="video-wrapper">
+                    <video muted loop><source src="videos/flying_creature.mp4" type="video/mp4"></video>
+                    <p><span class="video-overlay-text">(Hover to play)</span></p>
+                </div>
+                <div class="description">
+                    After messing around with active ragdoll on the default Manny rig, I wanted to 
+                    see if I could apply similar physical animation techniques to some arbitrary 
+                    skeletal mesh, made by me from scratch.<br><br>
+                    I ended up creating... whatever the hell that thing is.
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 10em;">&nbsp</div>
+    </div>
+    
+    <div class="ps">Coded by yours truly.</div>
+    
+    </body>
+
+    <!--  Include scripts at the bottom, not at the head. This is to make sure all elements initialize first. -->
+    <script src="home.js"></script>
+</html>

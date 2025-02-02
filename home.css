@@ -1,0 +1,259 @@
+
+/* disable default margin and padding */
+*{
+    margin: 0;
+    padding: 0;
+    color: #111;
+    user-select: none;
+}
+
+body{ 
+    min-height: 100vh;  /* make sure content occupies entire screen */
+    background-color: rgb(131, 185, 188);  /* rgb(84, 130, 141);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ============= VIDEO TILES ============= */
+.tile-container {  /* container for all tiles */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin: 2em;
+}
+.tile {         /* individual tile (title + video + description) */
+    margin: 1em;
+    padding: 1em;
+    max-width: 500px;
+    transition: transform 0.5s;
+    background-color: #13783a;
+    border: solid 2px rgb(0, 49, 36);
+    border-radius: 1em;
+}
+.tile:hover {  /* pop out when hovered */
+    transform: scale(1.05);
+}
+.tile:hover .video-wrapper p {  /* hide overlay text when tile is hovered */
+    opacity: 0;
+}
+.video-wrapper video { /* video itself */
+    width: 100%;
+    border-radius: 0.2em;
+    border: 1px solid black;
+}
+.video-wrapper p {     /* overlay text container */
+    position:relative;
+    height: 0;
+    top:-5em;
+    transition: opacity 0.5s; /* to fade in/out */
+}
+.video-overlay-text {  /* overlay text itself */
+    font-weight: bold;
+    color: black;
+    background-color: rgb(106, 176, 179);
+    padding: 0.5em;
+    border: solid 1px black;
+    border-radius: 1em;
+    user-select: none;
+}
+.tile .description {  /* description text */
+    color: ivory;
+    font-weight: 450;
+    font-size: 0.95em;
+    text-align: left;
+    line-height: 1.4em;
+    text-shadow: 0 0 2px #333;
+    margin: 0.5em 0.3em;
+}
+.tile .title {     /* title text */
+    font-weight: 500; 
+    font-size: larger; 
+    color: ivory; 
+    height: 2em;
+}
+
+
+/* ============= BUSINESS CARD ============= */
+/* small box fixed to top right corner that expands when hovered */
+.business-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 8em;
+    height: 2em;
+    padding: 0.3em;
+    background-color: #C11D59;
+    border: solid 2px black;
+    border-radius: 0.5em;
+    transition: width 0.5s, height 0.5s;
+    z-index: 100;
+    overflow: hidden;
+
+}
+.business-card:hover, .business-card.expanded {
+    width: 20em;
+    height: 8em;
+}
+.business-card .title {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 0.3em;
+}
+.icon-links {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-links a {
+    margin: 0.7em;
+    padding: 0.3em;
+    text-decoration: none;
+    transition: transform 0.4s;
+    padding: 0;
+}
+.icon-links img {
+    width: 2em;
+    height: 2em;
+}
+.icon-links a:hover {
+    transform: scale(1.2);
+}
+.email-text {
+    color: white;
+    padding: 0.2em 0.5em;
+    border: 1px solid black;
+    background-color: #a1174a;
+    border-radius: 0.5em;
+    user-select: text;
+    text-align: center;
+}
+
+
+/* ============= TITLE ============= */
+/* Contains the 2 title elements. First one fades in, then second one slides down from under it */
+.main-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 1em 0 1.3em;
+    font-family: 'Marcellus', serif;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgb(69, 127, 130);
+    backdrop-filter: blur(5px);
+    transition: opacity 1s;
+}
+.main-title div:first-child {
+    font-size: 4em;
+    opacity: 0;
+    animation: fade-in 2s forwards;
+    z-index: 1;
+    background-color: rgb(69, 127, 130);
+    width: 100%;
+}
+.main-title div:last-child {
+    font-size: 2em;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slide-in 4s forwards;
+}
+@keyframes fade-in {
+    20% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes slide-in {
+    60% { transform: translateY(-100%); opacity: 0; }
+    80% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+
+/* ============= TEXT-ONLY BLOCKS ============= */
+.subtitle {
+    background-color: #13783a;
+    margin: 2em auto;
+    width: 50%;
+    border: solid 2px rgb(0, 80, 60);
+    border-radius: 0.5em; 
+    padding: 1em 2em;
+    box-shadow: 0 1px 4px black;
+    
+    color: ivory;
+    font-weight: 450;
+    text-align: left;
+    line-height: 1.4em;
+    text-shadow: 0 0 2px #333;
+}
+.subtitle span {
+    font-weight: bold;
+    color: inherit;
+    text-shadow: 0px 0px 2px black;
+}
+.subtitle .title {
+    font-weight: 500; 
+    font-size: larger; 
+    color: ivory; 
+    height: 2em;
+    text-align: center;
+}
+.second {
+    border: solid 2px rgb(0, 49, 36);
+    box-shadow: 0 1px 3px black;
+}
+
+
+/* ============= SEPARATOR (CATEGORY) TITLE ============= */
+.secondary-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 1em 0 1.3em;
+    margin-top: 3em;
+    font-family: 'Marcellus', serif;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgb(69, 127, 130);
+    font-size: 2em;
+}
+.secondary-title span {
+    font-size: medium;
+    margin-top: 1em;
+}
+
+
+/* ====== tiny text at the bottom of the screen ====== */
+.ps {
+    font-size: small;
+    z-index: 200; 
+    position:absolute;
+    right: 0.5em;
+    padding: 0.35em;
+}
+
+
+/* ============= MOBILE ============= */
+
+@media(max-width: 800px) {
+    .tile-container { margin: 0;}
+    .tile{ padding: 0.7em; margin-bottom: 1.7em; }
+    .subtitle { width: 80%; padding: 0.8em; }
+
+    /* expand business card to (almost) full width on mobile, and merge it with bottom of the screen */
+    .business-card.expanded, .business-card:hover { 
+        width: 99.3%;
+        height: 8.5em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+/*  padding defines additional space around inner content. */
+/*  margin defines distance from neighboring elements.  */
